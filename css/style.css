@@ -26,6 +26,10 @@
     border: 1px solid #fff;
     margin-left: 5px;
 }
+
+.radius:hover{
+    background: var(--yellow);
+}
 /* navbar end */
 
 /* header */
@@ -138,13 +142,14 @@
         width: 18rem;
         margin: 10px;
         border-radius: 10px;
-        box-shadow: 1px 1px 1px 4px rgb(219, 218, 218);
+        box-shadow:  5px 10px 18px #888888;
     }
 
     .main-row-div > div > .card-div > img{
         width: 100%;
         height: 80%;
         margin-bottom: 10px;
+        border-radius: 10px;
     }
 
     /* slider */
@@ -279,6 +284,7 @@
 
     .tasker-tstimony > p{
         color: var(--brown);
+        font-weight: 600;
     }
 
     .tasker-testimony-div{
@@ -288,6 +294,346 @@
 
     .tasker-testimony-div > div > img{
         border-radius: 50px;
+        width: 60%;
+        height: 25%;
+        margin-right: -150px;
+    }
+
+    .time{
+        color: grey;
     }
     /* tasker-tstimony */
+
+    /* get-started */
+    .get-started{
+        background: rgba(244, 255, 244, 0.5);
+        min-height: 70vh;
+        /* padding-left: 25px; */
+        /* margin: 0px 30px; */
+    }
+    .get-started > h3{
+        font-weight: 600;
+        text-align: center;
+    }
+    .get-started-one{
+        border-right: 1px solid rgb(199, 196, 196);
+    }
+    .get-started-one > a, .get-started-two > a{
+        text-decoration: none;
+        color: var(--white);
+        background: var(--brown);
+        border-radius: 10px;
+        padding: 7px;
+        /* font-weight: 600; */
+        font-size: 20px;
+    }
+    .get-started-one > a{
+        padding: 7px 25px;
+        width: 70%;
+    }
+
+    .get-started-one > a:hover, .get-started-two > a:hover{
+        background: var(--yellow);
+    }
+    /* get-started end */
+
+    /* help-today */
+    .help-today-h3{
+        color: var(--brown);font-weight: 800;
+        margin-left: 16%;
+    }
+    .help-today{
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: 15%;
+    }
+
+    .help-today > div{
+        border: 2px solid var(--brown);
+        color: var(--brown);
+        padding: 5px;
+        border-radius: 10px;
+        margin-left: 15px;
+    }
+    /* help-today end */
+    .link-app > form > input{
+        border: 2px solid var(--brown);
+        width: 50%;
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+
+    .link-app > form > button{
+        border-radius: 10px;
+        background: var(--brown);
+        color: var(--white);
+        border: none;
+        padding: 4px 10px;
+        font-size: 18px;
+    }
+    .app-link-logo{
+        margin-top: -35px;
+    }
+
+    .app-link-logo > img:hover{
+        padding-top: 5px;
+    }
 /* main end */
+
+/* footer */
+    footer{
+        margin-top: 20vh;
+        background: #6c757d;
+        min-height: 58vh;
+    }
+
+    .media > h4{
+        /* margin-top: 10vh; */
+    }
+
+    .media > h4, .footer-main-div > h4{
+        color: rgb(214, 200, 200);
+        margin-left: 40px;
+    }
+
+    .footer-main-div > ul > li{
+        list-style: none;
+        padding: 5px;
+    }
+
+    .footer-main-div > ul > li > a{
+        color: rgb(248, 244, 244);
+        text-decoration: none;
+    }
+
+    .footer-main-div > ul > li > a:hover{
+        border-bottom: 2px solid var(--brown);
+        padding-bottom: 8px;
+        color: var(--brown);
+        /* transition: ease-in-out; */
+    }
+
+    .single-li{
+        color: rgb(248, 244, 244);
+    }
+
+    .mobile{
+        margin-left: 50%;
+    }
+
+    .footer-help{
+        text-decoration: none;
+        border-radius: 10px;
+        background: var(--brown);
+        padding: 10px 20px;
+        font-weight: 600;
+        color: var(--white);
+        margin-left: 30px;
+    }
+
+    .footer-help:hover{
+        color: white;
+        text-decoration: none;
+    }
+/* footer end */
+
+/* signup page */
+    .signup-div > p{
+        color: var(--brown);
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    form > .label{
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    form > select{
+        font-weight: bolder;
+        color: var(--brown);
+    }
+
+    form > p{
+        color: var(--brown);
+        font-weight: bolder;
+        font-size: 29px;
+    }
+
+    form > p span{
+        color: var(--brown);
+        font-weight: normal;
+        font-size: 14px;
+    }
+
+    form > button{
+        background: var(--yellow);
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-weight: 600;
+        width: 100%;
+        border: none;
+        color: var(--brown);
+    }
+
+    .already-account{
+        color: var(--brown);
+        font-weight: bold;
+    }
+
+    .already-account > a{
+        color: var(--yellow);
+        text-decoration: none;
+    }
+
+    .already-account > a:hover{
+        border-bottom: 2px solid var(--brown);
+    }
+
+    /* midcol-wrapper start */
+    .midcol-wrapper > .j{
+        border-bottom: 2px solid var(--yellow);
+    }
+    .midcol-wrapper h3{
+        font-weight: bold;
+    }
+    .midcol-wrapper >.row > div > h3{
+        font-size: 29px;
+        font-weight: bolder;
+    }
+
+    .midcol-wrapper div > p{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    /* midcol-wrapper end */
+
+    /* reg-response start */
+    .reg-response > h3{
+        font-weight: bold;
+        font-size: 32px;
+        margin-bottom: 70px;
+        color: var(--brown);
+    }
+
+    .reg-response > .row{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .reg-response > .row > .col-md-{
+        flex-direction: row;
+        margin-right: 70px;
+    }
+
+    .col-col{
+        margin-left: 100px;
+    }
+    .reg-response > .row > .col-md- > h4{
+        font-weight: bold;
+        font-size: 27px;
+    }
+
+    .reg-response > .row > .col-md- > p{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    /* reg-response end */
+
+    /* signup-testimony-div */
+    .signup-testimony-div > span > i{
+        font-size: 30px;
+    }
+    .signup-testimony-div p{
+        color: var(--brown);
+        margin-top: 60px;
+        font-weight: 600;
+        font-size: 18px;
+        margin-left: 90px;
+    }
+
+    .signup-testimony-div > span{
+        font-weight: 600;
+        font-size: 12px;
+        margin-left: 90px;
+        color: var(--brown);
+    }
+    /* signup-testimony-div end */
+
+    /* question-ask start */
+    .question-ask > h3{
+        color: var(--brown);
+        font-weight: bold;
+        font-size: 34px;
+    }
+
+    .question-ask-div{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .question-ask-div > .question-div-one{
+        margin-left: 60px;
+    }
+
+    .question-div-two{
+        margin-left: 90px;
+    }
+
+    .question-ask-div > div > ul > li{
+        list-style: none;
+        color: var(--brown);
+        padding: 20px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    /* question-ask end */
+
+    /* last-wrapper start */
+    .last-wrapper{
+        background: url("../img/main-slider-2-2.jpg") no-repeat;
+        background-position: center;
+        background-size: cover;
+        min-height: 70vh;
+        /* width: 95%; */
+        /* position: absolute; */
+        /* margin-left: 20px; */
+    }
+
+    .last-wrapper > h3{
+        font-size: 42px;
+        font-weight: bold;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 30%;
+    }
+
+    .last-wrapper > a{
+        text-decoration: none;
+        color: var(--white);
+        border-radius: 10px;
+        background: var(--brown);
+        padding: 7px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        position: absolute;
+        margin-top: 20vh;
+    }
+
+    .last-wrapper > a:hover{
+        background: var(--yellow);
+    }
+
+    .last-wrapper > div{
+        position: absolute;
+        margin-top: 25vh;
+        margin-left: 240px;
+    }
+
+    .last-wrapper > div a > img:hover{
+        padding: 5px;
+    }
+    /* last-wrapper end */
+/* signup page end */
