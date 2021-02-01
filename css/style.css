@@ -4,6 +4,7 @@
     --yellow: #fbbe28;
     --lightRed: #fd9b9b;
     --white: #ffffff;
+    --altWhite: rgb(209, 207, 207);
 }
 /* color parlet */
 /* :root{
@@ -456,7 +457,7 @@
         color: var(--brown);
     }
 
-    form > p{
+    .signup-div > form > p{
         color: var(--brown);
         font-weight: bolder;
         font-size: 29px;
@@ -468,7 +469,7 @@
         font-size: 14px;
     }
 
-    form > button{
+    .signup-div > form > button{
         background: var(--yellow);
         border-radius: 10px;
         padding: 5px 10px;
@@ -637,3 +638,149 @@
     }
     /* last-wrapper end */
 /* signup page end */
+
+/* Task details  start*/
+    /* details-wrapper start */
+    .details-wrapper > h5{
+        /* font-size: 2px; */
+        font-weight: bold;
+    }
+
+    .expect{
+        border: 1px solid rgb(209, 207, 207);
+        padding: 30px 20px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .expect > div > img{
+        margin-right: -100px;
+    }
+
+    .popover-btn{
+        border: none;
+        background: transparent;
+        color: var(--brown);
+        font-weight: 600;
+    }
+
+    .expect > div > h6{
+        font-weight: bold;
+    }
+    /* details-wrapper end */
+
+    /* address-input start */
+    .address-input{
+        border: 1px solid var(--altWhite);
+        padding: 30px 20px;
+    }
+
+    .address-input > div{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .address-input > div > .input-unit{
+        margin-right: 10px;
+    }
+
+    .address-input > div > .input-unit-two{
+        width: 20vh;
+    }
+
+    .address-input > button{
+        margin-left: 45%;
+        color: #fff;
+        background: var(--brown);
+        font-weight: bold;
+    }
+    /* address-input end */
+
+    /* adress-optional start */
+    .adress-optional > input{
+        padding: 30px;
+    }
+    /* adress-optional end */
+
+    /* task-option start */
+    .task-option{
+        border: 1px solid var(--altWhite);
+        padding: 30px 20px;
+    }
+
+    .task-option > p{
+        font-weight: 600;
+    }
+
+    .task-option > h6{
+        font-weight: bold;
+        color: var(--brown);
+        width: 15.1%;
+        border-bottom: 2px solid var(--altWhite);
+        padding-bottom: 10px;
+    }
+
+    .task-option-div{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .task-option-div > .task-option-div-one, .task-option-div > .task-option-div-two{
+        padding-right: 40vh;
+    }
+
+    .task-option-div > div >span{
+        font-weight: 600;
+    }
+
+    .task-option > form > h6{
+        font-weight: bold;
+        color: var(--brown);
+        width: 15.3%;
+        border-bottom: 2px solid var(--altWhite);
+        padding-bottom: 10px;
+    }
+
+    .task-option > form > .task-option-button{
+        /* width: 10%; */
+        margin-left: 45%;
+        color: #fff;
+        background: var(--brown);
+        font-weight: bold;
+    }
+
+    
+    /* task-option end */
+
+    /* full-details-task start */
+    .full-details-task{
+        border: 1px solid var(--altWhite);
+        padding: 30px 20px;
+        margin-bottom: 170px;
+    }
+
+    .full-details-task > h6{
+        font-weight: 600;
+    }
+
+    .full-details-task > p, .full-details-task > form > p{
+        font-weight: 400;
+    }
+
+    .full-details-task > form > textarea{
+        width: 145vh;
+    }
+
+    .full-details-task > form > button{
+        margin-left: 45%;
+        color: #fff;
+        background: var(--brown);
+        font-weight: bold;
+    }
+
+    .help-adjust{
+        margin-left: -5px;
+        /* margin-bottom: 40px; */
+    }
+    /* full-details-task end */
+/* Task details end */
