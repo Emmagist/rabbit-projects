@@ -5,9 +5,11 @@
             <p>Get help from thousands of trusted taskers for everything from errands to contactless deliveries </p>
         </div>
         <div class="header-div-form">
-            <form class="header-form">
-                <input class="pl-3" type="search" placeholder="I need help with ..." aria-label="Search">
-                <button class="" type="submit">Get help today</button>
+            <form action="" method="post">
+                <div class="header-form">
+                        <input class="pl-3" type="search" placeholder="I need help with ..." aria-label="Search" name="search_text" id="search_text">
+                        <button class="" type="submit">Get help today</button>
+                </div>
             </form>
             <ul>
                 <li>Deliveries</li>

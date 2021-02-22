@@ -1,3 +1,9 @@
+<?php 
+    require "libs/user.php";
+    // $session->checkSession();
+    $token = $_SESSION['csrf'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

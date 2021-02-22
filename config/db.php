@@ -1,47 +1,84 @@
 <?php
-    require_once "config.php";
+    require_once "init.php";
+
     class Database{
-        private $db_host = "DB_HOST"; // Change as required 
-        private $db_user = "DB_USER"; // Change as required
-        private $db_pass = "DB_PASSWORD"; // Change as required
-        private $db_name = "DB_NAME"; // Change as required
+        // private $db_host = "DB_HOST"; 
+        // private $db_user = "DB_USER";
+        // private $db_pass = "DB_PASSWORD";
+        // private $db_name = "DB_NAME";
 
         private $con = false; // Check to see if the connection is active
-        private $myconn = ""; // This will be our mysqli object
+        public $myconn ;// This will be our mysqli object
         private $result = array(); // Any results from a query will be stored here
         private $myQuery = ""; // used for debugging process with SQL return
         private $numResults = ""; // used for returning the number of rows
 
+        function __construct(){
+
+            $this->connect();
+        }
+
         // Function to make connection to database
         public function connect() {
-            if (!$this->con) {
-                $this->myconn = new mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name); // mysql_connect() with variables defined at the start of Database class
-                if ($this->myconn->connect_errno > 0) {
-                    array_push($this->result, $this->myconn->connect_error);
-                    return false; // Problem selecting database return FALSE
-                } else {
-                    $this->con = true;
-                    return true; // Connection has been made return TRUE
+        
+                $this->myconn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME); // mysql_connect() with variables defined at the start of Database class
+                if ($this->myconn->connect_errno) {
+                    die("Database connection failed". $this->myconn->connect_error);exit;
                 }
-            } else {
-                return true; // Connection has already been made return TRUE
+        }
+
+        public function query($sql) {
+          return $this->myconn->query($sql);
+        }
+
+        public function lastId($sql){
+            if ($this->query($sql) === TRUE) {
+                //Finding id of lastly inserted record
+                return $last_id = $this->myconn->insert_id;
+            } 
+        }
+
+        public function selectData($table, $field = '*', $conditions = "", $column = ''){
+            $rows = [];
+                $fields = trim($field);
+                $where = !empty($conditions) ? "WHERE" : "";
+            $result = $this->query("SELECT " . $fields . " FROM " . $table . "  $where " . $conditions);
+            // var_dump($result);exit;
+            //$row_cnt = $result->num_rows;
+            // var_dump($row_cnt);exit;
+                if (!empty($result)) {
+              while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+              }
+              return $rows;
             }
         }
 
-        // Function to disconnect from the database
-        public function disconnect() {
-            // If there is a connection to the database
-            if ($this->con) {
-                // We have found a connection, try to close it
-                if ($this->myconn->close()) {
-                    // We have successfully closed the connection, set the connection variable to false
-                    $this->con = false;
-                    // Return true that we have closed the connection
-                    return true;
-                } else {
-                    // We could not close the connection, return false
-                    return false;
+        public function search($table, $field = '*',$conditions, $column = ''){
+            $rows = [];
+                $fields = trim($field);
+                $like_column = 'current_state';
+            $result = $this->query("SELECT " . $fields . " FROM " . $table . " WHERE ".$conditions);
+                if (!empty($result)) {
+              while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+              }
+              return $rows;
+            }
+        }
+
+        public function selectRandLimit($table, $field = '*', $conditions = "", $limit = ""){
+            $rows = [];
+            $fields = trim($field);
+            $where = !empty($conditions) ? "WHERE" : "";
+            $limits = "LIMIT" . "($limit)";
+            $result = $this->query("SELECT" . $fields . "FROM" . $table . " $where " . $conditions . "ORDER BY RAND()" . $limits);
+            // $row_count = $result->num_rows;
+            if (!empty($result)) {
+                while ($row = $result->fetch_assoc()) {
+                   $rows[] = $row;
                 }
+                return $rows;
             }
         }
 
@@ -51,66 +88,30 @@
             return $val;
         }
 
-        public function save($table, $sql) {
-            return $this->sql("INSERT INTO " . $table . "  SET " . $sql);
+        public function saveData($table, $sql){
+            return $this->query("INSERT INTO " . $table . "  SET " . $sql);
         }
 
+        
+
+        // public function save($table, $sql) {
+        //     return $this->query("INSERT INTO " . $table . "  SET " . $sql);
+        // }
+
         public function erase($table, $conditions) {
-            return $this->sql("DELETE FROM " . $table . "  WHERE " . $conditions);
+            return $this->query("DELETE FROM " . $table . "  WHERE " . $conditions);
         }
     
         public function countRows($table, $field = '*', $conditions) {
             $fields = trim($field);
-            $this->sql("SELECT " . $fields . " FROM " . $table . "  WHERE " . $conditions);
+            $this->query("SELECT " . $fields . " FROM " . $table . "  WHERE " . $conditions);
             return $this->numRows();
         }
 
-        public function select($table, $field = '*', $conditions = "", $column = '') {
-            $fields = trim($field);
-            $where = !empty($conditions) ? "WHERE" : "";
-            $this->sql("SELECT " . $fields . " FROM " . $table . "  $where " . $conditions);
-            $rlt = array_filter($this->getResult());
-            //var_dump($rlt); $this->getSql();
-            //echo $column;
-            if (is_object($rlt) || is_array($rlt) || !empty($rlt)) {
-                return !empty($column) ? $rlt[0][$column] : $rlt;
-            }
-        }
-    
         public function update($table, $sql, $conditions) {
-            return $this->sql("UPDATE " . $table . "  SET " . $sql . " WHERE " . $conditions);
+            return $this->query("UPDATE " . $table . "  SET " . $sql . " WHERE " . $conditions);
         }
     
-        public function sql($sql) {
-            //var_dump($sql); exit;
-            $query = $this->myconn->query($sql);
-            $this->myQuery = $sql; // Pass back the SQL
-            if ($query) {
-    // If the query returns >= 1 assign the number of rows to numResults
-                $this->numResults = $query->num_rows;
-    // Loop through the query results by the number of rows returned
-                for ($i = 0; $i < $this->numResults; $i++) {
-                    $r = $query->fetch_array();
-                    $key = array_keys($r);
-                    for ($x = 0; $x < count($key); $x++) {
-                        // Sanitizes keys so only alphavalues are allowed
-                        if (!is_int($key[$x])) {
-                            if ($query->num_rows >= 1) {
-                                $this->result[$i][$key[$x]] = $r[$key[$x]];
-                            } else {
-                                $this->result = "";
-                            }
-    
-                        }
-                    }
-                }
-                return true; // Query was successful
-            } else {
-                array_push($this->result, $this->myconn->error);
-                return false; // No rows where returned
-            }
-        }
-
         // Function to insert into the database
 	    public function insert($table, $params = array()) {
             // Check to see if the table exists
@@ -130,16 +131,24 @@
             }
         }
 
-        // public function redirect($location) {
-        // 	header("Location:?GJH={$location}");
-        // 	unset($_SESSION['_token']);
-        // 	exit;
-        // }
-
+        //redirect function -> header()
         public function redirectOpen($location) {
             header("Location:{$location}");
-            unset($_SESSION['_token']);
-            exit;
+            unset($_SESSION['csrf']);exit;
+        }
+
+        // to generate a token
+        public function _tokenGen(){
+            if (empty($_SESSION['csrf'])) {
+                $_SESSION['csrf'] = strtolower(hash_hmac("sha256", uniqid(), bin2hex(openssl_random_pseudo_bytes(22))));
+
+                return $_SESSION['csrf'];
+            }
+        }
+
+        //real_escape_string
+        public function escape($data) {
+            return strtolower(trim(addslashes($this->myconn->real_escape_string($data))));
         }
     }
     $db = new Database;

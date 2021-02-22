@@ -2,6 +2,7 @@
     require "inc/head.php";
     require "inc/nav.php";
     require "inc/header.php";
+    require "libs/index_search_fetch.php";
 ?>
 <!-- index page main -->
 <main class="container-fluid">
@@ -22,7 +23,7 @@
     <div class="col-md-12 pupolar-div">
         <h3 class="">Popular projects in your area</h3>
         <div class=" main-row-div">
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 text-center" id="header_search_result">
                 <div class="card-div">
                     <img src="img/main-slider-3-2.jpg" alt="">
                 <h6 class="">Assemble a Task/Desk</h6>
@@ -82,6 +83,41 @@
             </div>
         </div>
     </div>
+    <div class="col-md-12 pupolar-div-two">
+        <h3 class="">Popular projects in your area</h3>
+        <div class=" main-row-div">
+            <div class="owl-carousel owl-theme" id="owl-theme">
+            <div class="col-md-3 text-center">
+                <div class="card-div">
+                    <img src="img/main-slider-3-2.jpg" alt="" height="5%">
+                <h6 class="">Assemble a Task/Desk</h6>
+                <a href="#" class=""><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="card-div">
+                    <img src="img/main-slider-3-2.jpg" alt="">
+                <h6 class="">Assemble a Task/Desk</h6>
+                <a href="#" class="mb-3"><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="card-div">
+                    <img src="img/main-slider-3-2.jpg" alt="">
+                <h6 class="">Assemble a Task/Desk</h6>
+                <a href="#" class="mb-3"><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="card-div">
+                    <img src="img/main-slider-3-2.jpg" alt="">
+                <h6 class="">Assemble a Task/Desk</h6>
+                <a href="#" class="mb-3"><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
     <div class="col-md-12 mt-5">
         <div class="row mid-wrapper">
             <div class="col-md-6">
@@ -97,108 +133,250 @@
         </div>
     </div>
     <div class="slider-card-wrapper mt-5 container">
-        <div>
-            <div class="slider-card">
-                <div class="div-slider-img">
-                    <div class="sm-div-slider-img">
-                        <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+        <div class="owl-carousel owl-theme">
+            <div>
+                <div class="slider-card">
+                    <div class="div-slider-img">
+                        <div class="sm-div-slider-img">
+                            <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+                        </div>
+                        <div class="lg-div-slider-img">
+                            <h5>Jeffrey C</h5>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
+                        </div>
+                    </div><hr>
+                    <h6>Featured Skills</h6>
+                    <div class="featured">
+                        <div class="featured-div-ul-one">
+                            <ul>
+                                <li>Help Moving</li>
+                                <li>Home Repairs</li>
+                                <li>Furniture Assemble</li>
+                            </ul>
+                        </div>
+                        <div class="featured-div-ul-two">
+                            <ul>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                            </ul>
+                        </div>
+                    </div><hr>
+                    <div class="slider-text">
+                        <h5>I'm the right person for the job:</h5>
+                        <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
                     </div>
-                    <div class="lg-div-slider-img">
-                        <h5>Jeffrey C</h5>
-                        <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
-                        <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
-                    </div>
-                </div><hr>
-                <h6>Featured Skills</h6>
-                <div class="featured">
-                    <div class="featured-div-ul-one">
-                        <ul>
-                            <li>Help Moving</li>
-                            <li>Home Repairs</li>
-                            <li>Furniture Assemble</li>
-                        </ul>
-                    </div>
-                    <div class="featured-div-ul-two">
-                        <ul>
-                            <li><a href="#">$38/hrs</a></li>
-                            <li><a href="#">$38/hrs</a></li>
-                            <li><a href="#">$38/hrs</a></li>
-                        </ul>
-                    </div>
-                </div><hr>
-                <div class="slider-text">
-                    <h5>I'm the right person for the job:</h5>
-                    <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
                 </div>
             </div>
-        </div>
-        <div>
-            <div class="slider-card">
-                <div class="div-slider-img">
-                    <div class="sm-div-slider-img">
-                        <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+            <div>
+                <div class="slider-card">
+                    <div class="div-slider-img">
+                        <div class="sm-div-slider-img">
+                            <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+                        </div>
+                        <div class="lg-div-slider-img">
+                            <h5>Jeffrey C</h5>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
+                        </div>
+                    </div><hr>
+                    <h6>Featured Skills</h6>
+                    <div class="featured">
+                        <div class="featured-div-ul-one">
+                            <ul>
+                                <li>Help Moving</li>
+                                <li>Home Repairs</li>
+                                <li>Furniture Assemble</li>
+                            </ul>
+                        </div>
+                        <div class="featured-div-ul-two">
+                            <ul>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                            </ul>
+                        </div>
+                    </div><hr>
+                    <div class="slider-text">
+                        <h5>I'm the right person for the job:</h5>
+                        <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
                     </div>
-                    <div class="lg-div-slider-img">
-                        <h5>Jeffrey C</h5>
-                        <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
-                        <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
-                    </div>
-                </div><hr>
-                <h6>Featured Skills</h6>
-                <div class="featured">
-                    <div class="featured-div-ul-one">
-                        <ul>
-                            <li>Help Moving</li>
-                            <li>Home Repairs</li>
-                            <li>Furniture Assemble</li>
-                        </ul>
-                    </div>
-                    <div class="featured-div-ul-two">
-                        <ul>
-                            <li><a href="#">$38/hrs</a></li>
-                            <li><a href="#">$38/hrs</a></li>
-                            <li><a href="#">$38/hrs</a></li>
-                        </ul>
-                    </div>
-                </div><hr>
-                <div class="slider-text">
-                    <h5>I'm the right person for the job:</h5>
-                    <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
                 </div>
             </div>
-        </div>
-        <div>
-            <div class="slider-card">
-                <div class="div-slider-img">
-                    <div class="sm-div-slider-img">
-                        <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+            <div>
+                <div class="slider-card">
+                    <div class="div-slider-img">
+                        <div class="sm-div-slider-img">
+                            <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+                        </div>
+                        <div class="lg-div-slider-img">
+                            <h5>Jeffrey C</h5>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
+                        </div>
+                    </div><hr>
+                    <h6>Featured Skills</h6>
+                    <div class="featured">
+                        <div class="featured-div-ul-one">
+                            <ul>
+                                <li>Help Moving</li>
+                                <li>Home Repairs</li>
+                                <li>Furniture Assemble</li>
+                            </ul>
+                        </div>
+                        <div class="featured-div-ul-two">
+                            <ul>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                            </ul>
+                        </div>
+                    </div><hr>
+                    <div class="slider-text">
+                        <h5>I'm the right person for the job:</h5>
+                        <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
                     </div>
-                    <div class="lg-div-slider-img">
-                        <h5>Jeffrey C</h5>
-                        <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
-                        <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
+                </div>
+            </div>
+            <div>
+                <div class="slider-card">
+                    <div class="div-slider-img">
+                        <div class="sm-div-slider-img">
+                            <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+                        </div>
+                        <div class="lg-div-slider-img">
+                            <h5>Jeffrey C</h5>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
+                        </div>
+                    </div><hr>
+                    <h6>Featured Skills</h6>
+                    <div class="featured">
+                        <div class="featured-div-ul-one">
+                            <ul>
+                                <li>Help Moving</li>
+                                <li>Home Repairs</li>
+                                <li>Furniture Assemble</li>
+                            </ul>
+                        </div>
+                        <div class="featured-div-ul-two">
+                            <ul>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                            </ul>
+                        </div>
+                    </div><hr>
+                    <div class="slider-text">
+                        <h5>I'm the right person for the job:</h5>
+                        <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
                     </div>
-                </div><hr>
-                <h6>Featured Skills</h6>
-                <div class="featured">
-                    <div class="featured-div-ul-one">
-                        <ul>
-                            <li>Help Moving</li>
-                            <li>Home Repairs</li>
-                            <li>Furniture Assemble</li>
-                        </ul>
+                </div>
+            </div>
+            <div>
+                <div class="slider-card">
+                    <div class="div-slider-img">
+                        <div class="sm-div-slider-img">
+                            <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+                        </div>
+                        <div class="lg-div-slider-img">
+                            <h5>Jeffrey C</h5>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
+                        </div>
+                    </div><hr>
+                    <h6>Featured Skills</h6>
+                    <div class="featured">
+                        <div class="featured-div-ul-one">
+                            <ul>
+                                <li>Help Moving</li>
+                                <li>Home Repairs</li>
+                                <li>Furniture Assemble</li>
+                            </ul>
+                        </div>
+                        <div class="featured-div-ul-two">
+                            <ul>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                            </ul>
+                        </div>
+                    </div><hr>
+                    <div class="slider-text">
+                        <h5>I'm the right person for the job:</h5>
+                        <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
                     </div>
-                    <div class="featured-div-ul-two">
-                        <ul>
-                            <li><a href="#">$38/hrs</a></li>
-                            <li><a href="#">$38/hrs</a></li>
-                            <li><a href="#">$38/hrs</a></li>
-                        </ul>
+                </div>
+            </div>
+            <div>
+                <div class="slider-card">
+                    <div class="div-slider-img">
+                        <div class="sm-div-slider-img">
+                            <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+                        </div>
+                        <div class="lg-div-slider-img">
+                            <h5>Jeffrey C</h5>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
+                        </div>
+                    </div><hr>
+                    <h6>Featured Skills</h6>
+                    <div class="featured">
+                        <div class="featured-div-ul-one">
+                            <ul>
+                                <li>Help Moving</li>
+                                <li>Home Repairs</li>
+                                <li>Furniture Assemble</li>
+                            </ul>
+                        </div>
+                        <div class="featured-div-ul-two">
+                            <ul>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                            </ul>
+                        </div>
+                    </div><hr>
+                    <div class="slider-text">
+                        <h5>I'm the right person for the job:</h5>
+                        <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
                     </div>
-                </div><hr>
-                <div class="slider-text">
-                    <h5>I'm the right person for the job:</h5>
-                    <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
+                </div>
+            </div>
+            <div>
+                <div class="slider-card">
+                    <div class="div-slider-img">
+                        <div class="sm-div-slider-img">
+                            <img src="img/main-slider-2-2.jpg" alt="" width="80%" height="80%">
+                        </div>
+                        <div class="lg-div-slider-img">
+                            <h5>Jeffrey C</h5>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-star text-warning"></i> 100% positive review</p>
+                            <p style="color: gray; font-weight: 600;"><i class="fa fa-check-circle text-success"></i> 174 completed tasks</p>
+                        </div>
+                    </div><hr>
+                    <h6>Featured Skills</h6>
+                    <div class="featured">
+                        <div class="featured-div-ul-one">
+                            <ul>
+                                <li>Help Moving</li>
+                                <li>Home Repairs</li>
+                                <li>Furniture Assemble</li>
+                            </ul>
+                        </div>
+                        <div class="featured-div-ul-two">
+                            <ul>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                                <li><a href="#">$38/hrs</a></li>
+                            </ul>
+                        </div>
+                    </div><hr>
+                    <div class="slider-text">
+                        <h5>I'm the right person for the job:</h5>
+                        <p>I have supplies and resources available for helping you move ins and outs and move around...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -220,37 +398,15 @@
     <div class="search text-center">
         <h3 class="mb-5">Places where we work - Thatask</h3>
         <div class="location">
-            <form action="" class="form-group">
-                <input type="search" class="pl-3" placeholder="Search by address">
-                <button type="submit" class="btn-search">Check availability</button>
+            <form action="" class="form-group" method="post">
+                <input type="search" name="search" class="pl-3" placeholder="Search by address" autocomplete="on" id="searchItem">
+                <button type="submit" class="btn-search" id="searchBtn">Check availability</button>
             </form>
         </div>
     </div>
-    <div class="place-div ">
-        <div class="mt-5">
-            <h5 class="ml-5">Lagos</h5>
-            <ul>
-                <li>Ikeja</li>
-                <li>Victoria Island</li>
-                <li>Leki</li>
-                <li>etc...</li>
-            </ul>
-        </div>
-        <div class="mt-5">
-            <h5 class="ml-5">Abuja</h5>
-            <ul>
-                <li>Maitama</li>
-                <li>Gwarinpa</li>
-                <li>Duste</li>
-                <li>etc...</li>
-            </ul>
-        </div>
-        <div class="mt-5">
-            <h5 >Port Harcourt</h5>
-            <ul>
-                <li>Maitama</li>
-                <li>etc...</li>
-            </ul>
+    <div class="place-div " id="searchResult">
+        <div class="mt-5" id="">
+        
         </div>
     </div>
     <div class="col-md-12 mt-5 tasker-tstimony">

@@ -7,6 +7,9 @@
      * in the script.
      */
     define("TBL_USERS", "user");
+    define("TBL_CATEGORY", "category");
+    define("TBL_STATE", "current_state");
+    define("TBL_TEMPORARY_TABLE", "user_temporary_table");
 
 
 ?>

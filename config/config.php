@@ -5,4 +5,6 @@
     define("DB_PASSWORD", "");
     define("DB_NAME", "rabit_project");
 
+    session_start();
+
 ?>
