@@ -9,7 +9,6 @@
     <h3 class="p-3">LogIn Here</h3>
     <form action="" method="POST">
         <?php require "inc/error_message.php";?>
-        <?php require "inc/session_message.php";?>
         <input type="email" name="email" class="mt-4 p-4 form-control" placeholder="Email" required autocomplete="off"><br>
         <input type="password" name="password" class="mt-4 p-4 form-control" placeholder="Password" required autocomplete="off"><br>
         <button class=" mt-4 pb-5 pt-3 btn btn-success form-control" type="submit" name="login_button">Login</button>

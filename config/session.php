@@ -49,6 +49,7 @@ class Session{
 //   }
 
   public static function checkVerify(){
+    // self::init();
     if (self::get("verify") == "verified") {
     self::destroy();
     header("Location: dashboard.php");

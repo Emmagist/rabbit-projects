@@ -1,7 +1,11 @@
 <?php 
     require "libs/user.php";
     // $session->checkSession();
-    $token = $_SESSION['csrf'];
+    // $token = $_SESSION['csrf'];
+
+    if (isset($_GET['token'])) {
+        $token = $_GET['token'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,10 +39,12 @@
                 </div>
                 <div class="address-input mt-5">
                     <h6>START ADDRESS</h6>
-                    <div class="">
-                        <input type="search" placeholder="Enter street address" class="form-control mt-3 input-unit" required>
-                        <input type="search" placeholder="Unit or Apt #" class="form-control input-unit-two mt-3">
-                    </div>
+                    <form action="" method="post">
+                        <div class="">
+                            <input type="search" placeholder="Enter street address" class="form-control mt-3 input-unit" required name="address">
+                            <input type="search" placeholder="Unit or Apt #" class="form-control input-unit-two mt-3" name="">
+                        </div>
+                    </form>
                     <button type="submit" class="btn mt-5">Continue</button>
                 </div>
                 <div class="adress-optional mt-5">
@@ -61,7 +67,7 @@
                         <div class="task-option-div">
                             <div class="task-option-div-one"><input type="radio" class="mr-1"><span>Small-Est. 1hr</span></div>
                             <div class="task-option-div-two"><input type="radio" class="mr-1"><span>Medium-Est. 2-3hrs</span></div>
-                            <div class=""><input type="radio" class="mr-1"><span>Large-Est. 4+hr</span></div>
+                            <div class=""><input type="radio" class="mr-1"><span>Large-Est. 4hrs+</span></div>
                         </div>
                         <div class="">
                             <h6  class="mt-3">Vehicle Requirements</h6>
@@ -78,7 +84,7 @@
                     <form action="" method="post">
                         <textarea name="" id="" placeholder="Provider the summary of what you need done for your Tasker. Be sure to include size of your space, any equipment/tools need, and how to get in." class="form-control"></textarea>
                         <p>If you need two or more Taskers, please post additional tasks for each Tasker needed</p>
-                        <button type="submit" class="btn">See Taskers & Prices</button>
+                        <a href="#" class="">See Taskers & Prices</a>
                     </form>
                 </div> <hr class="mb-4">
                 <a href="#" class="footer-help help-adjust"><i class="fa fa-question-circle"></i> Help</a>               

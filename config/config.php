@@ -1,10 +1,7 @@
 <?php
 
-    define("DB_HOST", "localhost");
-    define("DB_USER", "root");
-    define("DB_PASSWORD", "");
-    define("DB_NAME", "rabit_project");
-
-    session_start();
-
+    // define("DB_HOST", "localhost");
+    // define("DB_USER", "root");
+    // define("DB_PASSWORD", "");
+    // define("DB_NAME", "rabit_project");
 ?>

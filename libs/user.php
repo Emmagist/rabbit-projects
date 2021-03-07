@@ -27,9 +27,9 @@
             return $db->saveData(TBL_TEMPORARY_TABLE, "csrf = '$token',email = '$email',current_state = '$current_state', category = '$category'");
         }
 
-        public function insertUser($token,$first_name,$last_name,$email,$password_hash,$state,$phone_number,$address,$task,$image,$role,$verify,$date,$time,$status){
+        public function insertUser($token,$first_name,$last_name,$email,$password_hash,$state,$phone_number,$address,$task,$image,$role,$verify,$date,$status){
             global $db;
-            return $db->saveData(TBL_USERS, "csrf = '$token', first_name = '$first_name', last_name = '$last_name', email = '$email', password = '$password_hash', state = '$state', phone_num = '$phone_number', address = '$address', task = '$task', image = '$image', role = '$role', verify = '$verify', date = '$date', time = '$time', status = '$status'");
+            return $db->saveData(TBL_USERS, "csrf = '$token', first_name = '$first_name', last_name = '$last_name', email = '$email', password = '$password_hash', state = '$state', phone_num = '$phone_number', address = '$address', task = '$task', image = '$image', role = '$role', verify = '$verify', date = '$date', status = '$status'");
         }
 
         public function updateTemporaryData($token ,$email,$current_state,$category){
@@ -45,6 +45,11 @@
         public function findUserByEmail($email){
             global $db;
             return $db->selectData(TBL_USERS, "*", "email = '$email'");
+        }
+
+        public function findUserByPassword($current_password){
+            global $db;
+            return $db->selectData(TBL_USERS, "*", "email = '$current_password'");
         }
 
         public function getTemporaryData($token){

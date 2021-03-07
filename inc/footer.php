@@ -1,7 +1,7 @@
 <footer>
-    <div class="footer-wrapper-col-md-12">
-        <div class="media ">
-            <h4 class="mt-4 mb-3">Follow us! we're friendly:</h4><!-- <span><a href="#"><i class="fa fa-facebook-f"></i></a></span><a href="#"><i class="fa fa-twitter></i></a><span></span><span><a href="#"><i class="fa fa-instagram"></i></a></span> -->
+    <div class="footer-wrapper col-md-12">
+        <div class="social_media ">
+            <h4 class="mt-4 mb-3">Follow us! we're friendly:</h4> <span><a href="#"><i class="fa fa-facebook-f"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></span>
         </div>
         <div class="row">
             <div class="col-md-4 footer-main-div">

@@ -6,7 +6,7 @@ $components = explode('/', $path);
 $first_part = $components[1];
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top" id="main-nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark " id="main-nav">
             <a class="navbar-brand text-secondary <?php $first_part == "index.php" ? "active" : "noactive" ?>" href="index.php">LOGO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>

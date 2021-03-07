@@ -2,7 +2,7 @@
     require "inc/head.php";
     require "inc/nav.php";
     require "inc/header.php";
-    require "libs/index_search_fetch.php";
+    // require "libs/index_search_fetch.php";
 ?>
 <!-- index page main -->
 <main class="container-fluid">
@@ -85,36 +85,50 @@
     </div>
     <div class="col-md-12 pupolar-div-two">
         <h3 class="">Popular projects in your area</h3>
-        <div class=" main-row-div">
-            <div class="owl-carousel owl-theme" id="owl-theme">
-            <div class="col-md-3 text-center">
-                <div class="card-div">
-                    <img src="img/main-slider-3-2.jpg" alt="" height="5%">
-                <h6 class="">Assemble a Task/Desk</h6>
-                <a href="#" class=""><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+        <div class="owl-carousel owl-theme" id="owl-theme">
+            <div class="item">
+                <div class="col-md-3 text-center card">
+                    <div class="card-div">
+                        <img data-src="img/main-slider-3-2.jpg" alt="" height="5%" class="card-img-top owl-lazy">
+                        <div class="card-body">
+                        <h6 class="card-title">Assemble a Task/Desk</h6>
+                        <a href="#" class=""><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 text-center">
-                <div class="card-div">
-                    <img src="img/main-slider-3-2.jpg" alt="">
-                <h6 class="">Assemble a Task/Desk</h6>
-                <a href="#" class="mb-3"><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+            <div class="item">
+                <div class="col-md-3 text-center card">
+                    <div class="card-div">
+                        <img data-src="img/main-slider-3-2.jpg" alt="" height="5%" class="card-img-top owl-lazy">
+                        <div class="card-body">
+                        <h6 class="card-title">Assemble a Task/Desk</h6>
+                        <a href="#" class=""><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 text-center">
-                <div class="card-div">
-                    <img src="img/main-slider-3-2.jpg" alt="">
-                <h6 class="">Assemble a Task/Desk</h6>
-                <a href="#" class="mb-3"><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+            <div class="item">
+                <div class="col-md-3 text-center card">
+                    <div class="card-div">
+                        <img data-src="img/main-slider-3-2.jpg" alt="" height="5%" class="card-img-top owl-lazy">
+                        <div class="card-body">
+                        <h6 class="card-title">Assemble a Task/Desk</h6>
+                        <a href="#" class=""><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 text-center">
-                <div class="card-div">
-                    <img src="img/main-slider-3-2.jpg" alt="">
-                <h6 class="">Assemble a Task/Desk</h6>
-                <a href="#" class="mb-3"><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+            <div class="item">
+                <div class="col-md-3 text-center card">
+                    <div class="card-div">
+                        <img data-src="img/main-slider-3-2.jpg" alt="" height="5%" class="card-img-top owl-lazy">
+                        <div class="card-body">
+                        <h6 class="card-title">Assemble a Task/Desk</h6>
+                        <a href="#" class=""><img src="img/tag icon.png" width="7%" height="7%" alt=""> Avg.Project: $54 - $132</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -396,17 +410,47 @@
         </div>
     </div>
     <div class="search text-center">
-        <h3 class="mb-5">Places where we work - Thatask</h3>
-        <div class="location">
-            <form action="" class="form-group" method="post">
-                <input type="search" name="search" class="pl-3" placeholder="Search by address" autocomplete="on" id="searchItem">
-                <button type="submit" class="btn-search" id="searchBtn">Check availability</button>
-            </form>
+        <div class="search-globe"><img src="img/icon3.png" alt=""></div>
+        <div class="search-location-div">
+            <h3 class="mb-5">Places where we work - Thatask</h3>
+            <div class="location">
+                <div class="location_div_input">
+                    <div class="input-group">
+                        <input type="text" name="search_text" class="pl-3" placeholder="Search by address" autocomplete="on" id="search_text">
+                        <button type="submit" class="btn-search input-group-addon" id="searchBtn">Check availability</button>
+                    </div>
+                </div>
+                <div class="location_div_result" id="location_div_result"></div>
+            </div>
         </div>
     </div>
     <div class="place-div " id="searchResult">
         <div class="mt-5" id="">
-        
+            <h5 class="ml-5">Lagos</h5>
+            <ul>
+                <li>Lekki</li>
+                <li>MaryLand</li>
+                <li>Yaba</li>
+                <li>Ikeja</li>
+            </ul>
+        </div>
+        <div class="mt-5" id="">
+            <h5 class="ml-5">Abuja</h5>
+            <ul>
+                <li>Lekki</li>
+                <li>MaryLand</li>
+                <li>Yaba</li>
+                <li>Ikeja</li>
+            </ul>
+        </div>
+        <div class="mt-5" id="">
+            <h5 class="ml-5">Port-</h5>
+            <ul>
+                <li>Lekki</li>
+                <li>MaryLand</li>
+                <li>Yaba</li>
+                <li>Ikeja</li>
+            </ul>
         </div>
     </div>
     <div class="col-md-12 mt-5 tasker-tstimony">
@@ -435,12 +479,12 @@
         <h3 class="text-center mb-5">Ready to get started?</h3>
         <div class="row">
             <div class="col-md-6 get-started-one text-center">
-                <img src="img/download.jpg" alt="">
+                <img src="img/icon2.png" alt="">
                 <p class="mt-4">Hear that? The sweet sight of relief. <br>Start getting more done.</p>
                 <a href="#">Sign up</a>
             </div>
             <div class="col-md-6 get-started-two text-center">
-                <img src="img/download.jpg" alt="">
+                <img src="img/icon1.png" alt="">
                 <p class="mt-4">Grow your own business while <br> saving the day for busy neighors.</p>
                 <a href="#">Become a Tasker</a>
             </div>

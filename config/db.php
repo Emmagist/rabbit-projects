@@ -1,11 +1,8 @@
 <?php
-    require_once "init.php";
+    require_once "constant.php";
+    // session_start();
 
     class Database{
-        // private $db_host = "DB_HOST"; 
-        // private $db_user = "DB_USER";
-        // private $db_pass = "DB_PASSWORD";
-        // private $db_name = "DB_NAME";
 
         private $con = false; // Check to see if the connection is active
         public $myconn ;// This will be our mysqli object
@@ -54,11 +51,12 @@
             }
         }
 
-        public function search($table, $field = '*',$conditions, $column = ''){
+        public function searchData($table, $field = '*', $column = '', $search, $conditions = ""){
             $rows = [];
                 $fields = trim($field);
-                $like_column = 'current_state';
-            $result = $this->query("SELECT " . $fields . " FROM " . $table . " WHERE ".$conditions);
+                $where = !empty($conditions) ? "WHERE" : "";
+            $result = $this->query("SELECT " . $fields . " FROM " . $table  . $column . "LIKE" . " '%" . $search . "%'" . "  $where " . $conditions);
+            //$row_cnt = $result->num_rows;
                 if (!empty($result)) {
               while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
@@ -66,6 +64,19 @@
               return $rows;
             }
         }
+
+        // public function search($table, $field = '*',$conditions, $column = ''){
+        //     $rows = [];
+        //         $fields = trim($field);
+        //         $like_column = 'current_state';
+        //     $result = $this->query("SELECT " . $fields . " FROM " . $table . " WHERE ".$conditions);
+        //         if (!empty($result)) {
+        //       while ($row = $result->fetch_assoc()) {
+        //         $rows[] = $row;
+        //       }
+        //       return $rows;
+        //     }
+        // }
 
         public function selectRandLimit($table, $field = '*', $conditions = "", $limit = ""){
             $rows = [];

@@ -239,7 +239,6 @@
     .main-row-div{
         display: flex;
         flex-wrap: nowrap;
-        /* margin-left: -30px; */
     }
 
     .main-row-div > div > .card-div{
@@ -275,14 +274,18 @@
         flex-wrap: nowrap;
     }
 
-    .div-slider-img > sm-div-slider-img{
+    /* .div-slider-img > .sm-div-slider-img{
         width: 100%;
+    } */
+
+    .div-slider-img > .sm-div-slider-img img{
+        border-radius: 10px;
     }
 
-    .div-slider-img > sm-div-slider-img > div{
+    /* .div-slider-img > .sm-div-slider-img > div{
         border-radius: 10px;
         border: 1px solid red;
-    }
+    } */
     
     .div-slider-img > .lg-div-slider-img{
         margin-left: -20px;
@@ -307,11 +310,11 @@
     }
 
     .owl-prev{
-        left: -30px;
+        left: 30px;
     }
 
     .owl-next{
-        right: -30px;
+        right: 30px;
     }
 
     .owl-prev, .owl-next{
@@ -359,22 +362,39 @@
     /* search */
     .search{
         margin-top: 80px;
+        display: flex;
+        flex-wrap: nowrap;
     }
 
-    .search > h3{
+    .search > .search-globe{
+        margin-left: -40%;
+    }
+
+    .search > .search-globe > img{
+        width: 15%;
+    }
+
+    .search > .search-location-div{
+        margin-left: -50%;
+        margin-top: 60px;
+        width: 100%;
+    }
+
+    .search > .search-location-div > h3{
         color: var(--brown);
     }
 
-    .location > form > input{
-        border: 2px solid var(--brown);
-        width: 25%;
+    .search > .search-location-div >.location > .location_div_input > .input-group > input{
+        border: 3px solid var(--brown);
+        width: 30%;
         font-size: 16px;
         padding: 5px;
+        margin-left: 30%;
         border-radius: 10px;
         box-shadow: none;
     }
 
-    .location > form > button{
+    .search > .search-location-div > .location > .location_div_input > .input-group > button{
         border-radius: 10px;
         background: var(--brown);
         color: var(--white);
@@ -438,6 +458,7 @@
         /* padding-left: 25px; */
         /* margin: 0px 30px; */
     }
+
     .get-started > h3{
         font-weight: 600;
         text-align: center;
@@ -445,6 +466,12 @@
     .get-started-one{
         border-right: 1px solid rgb(199, 196, 196);
     }
+
+    .get-started-one > img, .get-started-two > img{
+        width: 35%;
+        margin: -20px 0 -20px 0px;
+    }
+
     .get-started-one > a, .get-started-two > a{
         text-decoration: none;
         color: var(--white);
@@ -454,6 +481,7 @@
         /* font-weight: 600; */
         font-size: 20px;
     }
+
     .get-started-one > a{
         padding: 7px 25px;
         width: 70%;
@@ -517,13 +545,51 @@
         min-height: 58vh;
     }
 
-    .media > h4{
-        /* margin-top: 10vh; */
+    .social_media{
+        display: flex;
+        flex-wrap: nowrap;
     }
 
-    .media > h4, .footer-main-div > h4{
+    .social_media > h4, .footer-main-div > h4{
         color: rgb(214, 200, 200);
         margin-left: 40px;
+    }
+
+    .social_media > span{
+        margin-top: 20px;
+    }
+
+    .social_media > span > a{
+        text-decoration: none;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .social_media > span > a > .fa-facebook-f{
+        font-size: 38px;
+        color: #3B5998;
+    }
+
+    .social_media > span > a > .fa-facebook-f:hover{
+        font-size: 35px;
+    }
+
+    .social_media > span > a > .fa-twitter{
+        font-size: 38px;
+        color: #1da1f2;
+    }
+
+    .social_media > span > a > .fa-twitter:hover{
+        font-size: 35px;
+    }
+
+    .social_media > span > a > .fa-instagram{
+        font-size: 38px;
+        color: #e95950;
+    }
+
+    .social_media > span > a > .fa-instagram:hover{
+        font-size: 35px;
     }
 
     .footer-main-div > ul > li{
@@ -970,7 +1036,7 @@
 
     /* last-wrapper start */
     .last-wrapper{
-        background: url("../img/main-slider-2-2.jpg") no-repeat;
+        background: url("../img/sign up page banner.png") no-repeat;
         background-position: center;
         background-size: cover;
         min-height: 70vh;
@@ -1018,7 +1084,7 @@
     .dashboard-wrapper{
         background: rgba(244, 255, 244, 0.5);
         height: 90vh;
-        margin-top: 15rem;
+        margin-top: 8rem;
         margin-bottom: 35vh;
     }
 
@@ -1042,53 +1108,73 @@
 
     .dashboard-wrapper > .row > .dashboard-wrapper-col-one > ul >li{
         list-style: none;
-        padding: 20px 0px;
+        padding: 10px 0px;
         font-size: 24px;
         color: gray;
+        cursor: pointer;
     }
 
     .dashboard-wrapper > .row > .dashboard-wrapper-col-one > ul >li:hover{
+        /* background: rgba(244, 255, 244, 0.5); */
+        /* background: red; */
+        color: var(--brown);
+        font-weight: 20px;
+        /* border-left: 4px solid var(--brown); */
+        padding-left: 20px;
+        cursor: pointer;
+    }
+
+    .dashboard-wrapper > .row > .dashboard-wrapper-col-one > ul > .active{
         background: rgba(244, 255, 244, 0.5);
+        /* background: var(--altWhite); */
         color: var(--brown);
         font-weight: 20px;
         border-left: 4px solid var(--brown);
-        padding-left: 20px;
+        padding-left: 10px;
+        cursor: pointer;
     }
 
-    .dashboard-wrapper-col-two > h5{
-        font-size: 38px;
-        font-weight: bold;
+    .dashboard-wrapper-col-two > .dashboard_wrapper_col_two_h5_div{
         border-bottom: 2px solid var(--altWhite);
         padding-bottom: 2px;
-        margin-left: 10px;
-        margin-right: 10px;
     }
 
-    .dashboard-wrapper-col-two > h5 > span > button{
-        margin-left: 95%;
-        margin-top: -90px;
+    .dashboard-wrapper-col-two > .dashboard_wrapper_col_two_h5_div > span{
+        float: right;
+        margin-top: -10px;
+    }
+
+    .dashboard-wrapper-col-two > .dashboard_wrapper_col_two_h5_div > span > button{
         border-radius: 10px;
         font-size: 24px;
         font-weight: bold;
         color: var(--brown);
-        padding: 10px;
+        padding: 3px;
         background: transparent;
         border: 4px solid var(--brown);
+
+    }
+
+    .dashboard-wrapper-col-two > .dashboard_wrapper_col_two_h5_div > h5{
+        font-size: 32px;
+        font-weight: bold;
+        /* margin-top: -90%; */
+        /* margin-left: 10px;
     }
 
     /* Dashboard change password */
     .dashboard-wrapper-col-two .account-div  > form > input{
         width: 50%;
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .dashboard-wrapper-col-two > .account-div > form > .change-password-button{
         background: var(--brown);
         color: var(--yellow);
-        padding: 15px 17px;
+        padding: 8px 15px;
         border-radius: 10px;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .dashboard-wrapper-col-two > .account-div > form > .change-password-button:hover{
@@ -1098,10 +1184,10 @@
     .dashboard-wrapper-col-two .account-div > form > .cancel-password-button{
         background: transparent;
         color: var(--brown);
-        padding: 16px 18px;
+        padding: 10px 16px;
         border-radius: 10px;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
         border: 2px solid var(--altWhite);
     }
     /* Dashboard change password */
@@ -1143,13 +1229,15 @@
 
     .profile-logout{
         border-radius: 10px;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         color: grey;
-        padding: 10px;
+        padding: 5px;
         background: transparent;
         border: 4px solid var(--altWhite);
         margin-left: 45px;
+        text-decoration: none;
+
     }
 
     .profile-logout:hover{
@@ -1292,11 +1380,13 @@
         width: 145vh;
     }
 
-    .full-details-task > form > button{
+    .full-details-task > form > a{
         margin-left: 45%;
         color: #fff;
         background: var(--brown);
         font-weight: bold;
+        text-decoration: none;
+        border: 10px;
     }
 
     .help-adjust{
@@ -1312,7 +1402,7 @@
     margin-left: 25%;
     margin-top: 5%;
     border: 2px solid var(--altWhite);
-    padding: 2rem 4rem;
+    padding: 1.3rem 4rem;
 }
 .login-wrapper > h3{
     color: var(--brown);

@@ -7,10 +7,11 @@
         <div class="header-div-form">
             <form action="" method="post">
                 <div class="header-form">
-                        <input class="pl-3" type="search" placeholder="I need help with ..." aria-label="Search" name="search_text" id="search_text">
-                        <button class="" type="submit">Get help today</button>
+                        <input class="pl-3" type="text" placeholder="I need help with ..." aria-label="Search" name="" id="search">
+                        <button class="btn_search" type="button">Get help today</button>
                 </div>
             </form>
+            <div id="search_search"></div>
             <ul>
                 <li>Deliveries</li>
                 <li>Shopping</li>

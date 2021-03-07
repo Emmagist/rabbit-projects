@@ -5,4 +5,5 @@
     require_once "session.php";
     require_once "function.php";
     require_once "validation.php";
+    require_once "emailController.php";
 ?>

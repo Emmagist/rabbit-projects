@@ -4,6 +4,7 @@
     require "libs/process.php";
 
     $token = $db->_tokenGen();
+    // var_dump($token);exit;
 
 ?>
 <!-- signup page main -->
@@ -11,7 +12,7 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-8"><img src="img/main-slider-2-2.jpg" alt="" width="100%" height="90%"></div>
-            <div class="col-md-4 signup-div">
+            <div class="col-md-4 signup-div" id="signup_div">
                 <?php //var_dump($usr->getState());exit; ?>
                 
                 
@@ -21,9 +22,15 @@
                 <h3>Earn money your way</h3>
                 <p>See how much you can make tasking on Taskvendor</p>
                 <div class="">
-                   <form action="" method="POST" class="form-group>
+                   <form action="" method="POST" class="form-group">
                         <?php require "inc/error_message.php";?>
                         <?php require "inc/session_message.php";?>
+                        <!-- <div class="alert alert-danger">
+                            <li>danger</li>
+                        </div>
+                        <div class="alert alert-success">
+                            <li>danger</li>
+                        </div> -->
                         <label for="" class="label">Enter email</label>
                         <input type="email" name="email" class="form-control">
                         <label for="" class="label">Select your area</label>
@@ -44,7 +51,7 @@
                         </select>
                         <input type="hidden" name="token" class="form-control" value="<?=$token;?>">
                         <p>#13000 <span>per hour</span></p>
-                        <button class="mt-3 mb-3 signup-div-button" type="submit" name="get_started_button">Get started</button>
+                        <button class="mt-2 mb-2 p-2 signup-div-button" type="submit" name="get_started_button">Get started</button>
                     </form>
                 </div>
                 <div class="">
@@ -57,12 +64,12 @@
                    <form action="" method="POST" class="form-group">
                         <?php require "inc/error_message.php";?>
                         <?php require "inc/session_message.php";?>
-                        <input type="text" readonly value="<?=$email?>" class="form-control mb-3" name="email">
+                        <input type="text" readonly class="form-control mb-3" name="email" value="<?=$email?>">
                         <input type="text" class="form-control mb-3" placeholder="First Name" name="first_name">
                         <input type="text" class="form-control mb-3" placeholder="Last Name" name="last_name">
                         <input type="number" class="form-control mb-3" placeholder="Mobile Number" name="phone_number">
                         <input type="password" class="form-control mb-3" placeholder="Password" name="password">
-                        <input type="text" class="form-control mb-3" placeholder="Address" name="address">
+                        <input type="text" class="form-control mb-3" placeholder="Address" name="address" >
                         <button type="submit" class="btn btn-primary form-control" name="create_account">Create Account</button>
                     </form>
                 </div>
@@ -198,7 +205,7 @@
     </div>
     <div class="last-wrapper text-center mt-5">
         <h3 class="">Ready to make money your way?</h3>
-        <a href="#">Get Started</a>
+        <a href="#signup_div">Get Started</a>
         <div class=""><a href="#"><img src="img/android app icon.png" alt="" width="10%"></a> <span><a href="#"><img src="img/apple icon.png" alt="" width="10%"></a></span></div>
     </div>
 </main>
