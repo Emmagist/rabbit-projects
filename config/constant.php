@@ -16,7 +16,7 @@
 
     // Mailer
     define("EMAIL", "emma1994204@gmail.com");
-    define("EMAIL_PASSWORD", "Emma1994204");
+    define("EMAIL_PASSWORD", "Emmagist1994204");
     
     /**
      * Database Table Constants - these constants
