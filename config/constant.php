@@ -2,7 +2,7 @@
 
     date_default_timezone_set("Africa/Lagos");
 
-    //Local host
+    //Online host
     define("DB_HOST", "db4free.net");
     define("DB_USER", "emmar_204");
     define("DB_PASSWORD", "emma1994204");

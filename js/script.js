@@ -1,42 +1,3 @@
-$('#owl-theme').owlCarousel({
-    autoplay: true,
-    autoplayHoverPause: true,
-    lazyLoad: true,
-    margin: 5,
-    stagePadding: 5,
-    responsive: {
-        0: {
-            items: 1,
-            dots: false,
-        },
-        485: {
-            items: 2,
-            dots: false,
-        },
-        728: {
-            items: 3,
-            loop: true,
-        },
-        960: {
-            items: 4,
-            loop: true,
-        },
-        1200: {
-            items: 5,
-            dots: false,
-        }
-    }
-});
-
-$('#owl-theme').on('mousewheel', '.owl-stage', function (e) {
-    if (e.delay > 0) {
-        ('#owl-theme').trigger('next.owl');
-    }else{
-        ('#owl-theme').trigger('prev.owl');
-    }
-    e.preventDefault();
-})
-
 $('.owl-carousel').owlCarousel({
     autoplay: true,
     autoplayHoverPause: true,
@@ -45,6 +6,46 @@ $('.owl-carousel').owlCarousel({
     loop:true,
     dots: true,
 });
+
+// $('#owl-theme').owlCarousel({
+//     autoplay: true,
+//     autoplayHoverPause: true,
+//     lazyLoad: true,
+//     margin: 5,
+//     stagePadding: 5,
+//     responsive: {
+//         0: {
+//             items: 1,
+//             dots: false,
+//         },
+//         485: {
+//             items: 2,
+//             dots: false,
+//         },
+//         728: {
+//             items: 3,
+//             loop: true,
+//         },
+//         960: {
+//             items: 4,
+//             loop: true,
+//         },
+//         1200: {
+//             items: 5,
+//             dots: false,
+//         }
+//     }
+// });
+
+// $('#owl-theme').on('mousewheel', '.owl-stage', function (e) {
+//     if (e.delay > 0) {
+//         ('#owl-theme').trigger('next.owl');
+//     }else{
+//         ('#owl-theme').trigger('prev.owl');
+//     }
+//     e.preventDefault();
+// });
+
 
 // index header search
 $(document).ready(function(){
