@@ -9,8 +9,9 @@
     <div class="col-md-12 mt-4">
         <div class="div-wrapper row">
             <div class="col-md-8 div-star">
-                <ul>
-                    <li><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning fa-3"></i><i class="fa fa-star text-warning"></i> 1.1+ Millions Review</li>
+                <ul class="d-flex">
+                    <li id="rateYo"></li>
+                    <li> 1.1+ Millions Review</li>
                 </ul>
             </div>
             <div class="col-md-4 div-playstore">
@@ -84,7 +85,7 @@
         </div>
     </div>
     <div class="col-md-12 pupolar-div-two">
-        <h3 class="">Popular projects in your area</h3>
+        <h3 class="text-danger">Popular projects in your area</h3>
         <div class="owl-carousel owl-theme" id="owl-theme">
             <div class="item">
                 <div class="col-md-3 text-center card">
@@ -453,7 +454,7 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-12 mt-5 tasker-tstimony">
+    <div class="col-md-12 mt-5 tasker-tstimony" id="tasker-tstimony">
         <h3>Don't just take our word for it</h3>
         <p>See the way taskers are saving the day of people like you.</p>
         <div class="row mt-4">
@@ -538,3 +539,53 @@
 </main>
 
 <?php require "inc/footer.php"; ?>
+
+<script>
+    //Navbar Animation one
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop()) {
+            $('nav').removeClass('bg-dark');
+            $('nav div ul li a').removeClass('text-white');
+            $('nav').addClass('black-scroll');
+            $('nav div ul li a').addClass('text-scroll');
+        }else{
+            $('nav').removeClass('black-scroll');
+            $('nav').addClass('bg-dark');
+            $('nav div ul li a').addClass('text-white');
+            $('nav div ul li a').removeClass('text-scroll');
+        }
+    });
+    //Navbar animation one ended
+
+    // Tasker testimony animation start
+    $(document).on('scroll', function () {
+        $('#tasker-tstimony').show()
+        if ($('#tasker-tstimony').scrollTop()) {
+            // $('#tasker-tstimony').addClass('tasker-testimony-animation');
+            $('#tasker-tstimony h3').addClass('tasker-testimony-h3-animation');
+            $('#tasker-tstimony p').addClass('tasker-testimony-p-animation');
+            $('.tasker-testimony-div').addClass('tasker-testimony-div-animation');
+        }else{
+            $('#tasker-tstimony').hide();
+        }
+    })
+    // Tasker testimony animation ended
+
+    /* Rate yo  */
+     
+    $(function () {
+     
+      $("#rateYo").rateYo({
+        starWidth: "20px"
+      });
+     
+    });
+
+    // Getter
+    var starWidth = $("#rateYo").rateYo("option", "starWidth"); //returns 40px
+     
+    // Setter
+    $("#rateYo").rateYo("option", "starWidth", "40px"); //returns a jQuery Element
+
+    // Rate yo end
+</script>

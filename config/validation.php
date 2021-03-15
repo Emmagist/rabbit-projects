@@ -48,6 +48,25 @@
                 $error = "Password is required !";
             }
         }
+
+        // editUserAccount
+        public function editUserAccount(){
+            if (empty($_POST['firstName'])) {
+                $error = "Enter your first name!";
+            }
+            if (empty($_POST['lastName'])) {
+                $error = "Enter your last name!";
+            }
+            if (empty($_POST['email'])) {
+                $error = "Enter your email address!";
+            }
+            if (empty($_POST['address'])) {
+                $error = "Enter your home address!";
+            }
+            if (empty($_POST['task'])) {
+                $error = "Enter your task!";
+            }
+        }
     }
     $val = new Validation;
 ?>

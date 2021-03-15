@@ -59,14 +59,14 @@
         <form action="" method="post">
           <div>
             <?php foreach($usr->getAllUsers($token) as $key) : ?>
-            <input type="text" value="<?=$key['first_name'];?>" class="form-control p-3">
-            <input type="text" value="<?=$key['last_name'];?>" class="form-control mt-4 p-3">
-            <input type="text" value="<?=$key['email'];?>" class="form-control mt-4 p-3">
-            <input type="text" value="<?=$key['address'];?>" class="form-control mt-4 p-3">
-            <input type="text" value="<?=$key['task'];?>" class="form-control mt-4 p-3">
+            <input type="text" value="<?=$key['first_name'];?>" class="form-control p-3" name="firstName" id="firstName">
+            <input type="text" value="<?=$key['last_name'];?>" class="form-control mt-4 p-3" name="lastName" id="lastName">
+            <input type="email" value="<?=$key['email'];?>" class="form-control mt-4 p-3" name="email" id="email">
+            <input type="text" value="<?=$key['address'];?>" class="form-control mt-4 p-3" name="address" id="address">
+            <input type="text" value="<?=$key['task'];?>" class="form-control mt-4 p-3" name="task" id="task">
             <?php endforeach; ?>
           </div>
-          <div class=""><button type="submit" class="btn mt-4 p-2">Edit Account</button></div>
+          <div class=""><button type="submit" class="btn mt-4 p-2" id="editUserAccount">Edit Account</button></div>
         </form>
       </div>
       <div class="modal-footer">
@@ -100,3 +100,5 @@
     </div>
   </div>
 </div>
+
+<script src="js/modalScript.js"></script>

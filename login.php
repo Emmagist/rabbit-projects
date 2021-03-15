@@ -5,7 +5,7 @@
     // $session->checkLogin();
 ?>
 
-<div class="login-wrapper">
+<div class="login-wrapper col-md-5 offset-md-4 border mt-5">
     <h3 class="p-3">LogIn Here</h3>
     <form action="" method="POST">
         <?php require "inc/error_message.php";?>

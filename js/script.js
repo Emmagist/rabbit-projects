@@ -7,6 +7,14 @@ $('.owl-carousel').owlCarousel({
     dots: true,
 });
 
+// $(window).on('scroll', function () {
+//    if ($(window).scrollTop()) {
+//     $('nav').addClass('black-scroll');
+//    }else{
+//     $('nav').removeClass('black-scroll');
+//    }
+// });
+
 // $('#owl-theme').owlCarousel({
 //     autoplay: true,
 //     autoplayHoverPause: true,
@@ -130,6 +138,6 @@ $(document).ready(function(){
 //   });
 // }
 
-$(document).on('click', '.active_userdashboard_ul .userdashboard_li', function () {
-    $(this).addClass('active').siblings.removeClass('active');
-});
+// $(document).on('click', '.active_userdashboard_ul .userdashboard_li', function () {
+//     $(this).addClass('active').siblings.removeClass('active');
+// });
