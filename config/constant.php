@@ -3,16 +3,16 @@
     date_default_timezone_set("Africa/Lagos");
 
     //Online host
-    // define("DB_HOST", "db4free.net");
-    // define("DB_USER", "emmar_204");
-    // define("DB_PASSWORD", "emma1994204");
-    // define("DB_NAME", "rabbit_project1");
+    define("DB_HOST", "db4free.net");
+    define("DB_USER", "emmar_204");
+    define("DB_PASSWORD", "emma1994204");
+    define("DB_NAME", "rabbit_project1");
 
     //Local host
-    define("DB_HOST", "localhost");
-    define("DB_USER", "root");
-    define("DB_PASSWORD", "");
-    define("DB_NAME", "rabit_project");
+    // define("DB_HOST", "localhost");
+    // define("DB_USER", "root");
+    // define("DB_PASSWORD", "");
+    // define("DB_NAME", "rabit_project");
 
     // Mailer
     define("EMAIL", "emma1994204@gmail.com");
