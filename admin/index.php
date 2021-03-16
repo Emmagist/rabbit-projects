@@ -5,7 +5,10 @@
 
 <?php
     require_once "libs/init.php";
-    
+    if (isset($_GET['token']) || isset($_GET['tq'])) {
+      $token = $_GET['token'];
+    }
+
     $disabled = $admin->disabledUsers();
 ?>
 
@@ -34,7 +37,7 @@
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">pro sidebar</a>
+        <a href="../index.php?token=<?=$token?>">pro sidebar</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>

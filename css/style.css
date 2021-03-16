@@ -1164,7 +1164,7 @@ nav > div > ul > li > a.text-scroll:nth-child(1), nav > div > ul > li > a.text-s
     }
 
     .dashboard-wrapper > .row > .dashboard-wrapper-col-one{
-        width: 13%;
+        width: 5%;
     }
 
     .dashboard-wrapper > .row > .dashboard-wrapper-col-one > ul >li{
@@ -1192,11 +1192,11 @@ nav > div > ul > li > a.text-scroll:nth-child(1), nav > div > ul > li > a.text-s
         color: var(--brown);
         font-weight: 20px;
         border-left: 4px solid var(--brown);
-        /* padding-left: 10px; */
+        /* padding-left: -10px; */
         cursor: pointer;
     }
 
-    .dashboard-wrapper-col-two > .user_profile_wrap > .dashboard_wrapper_col_two_h5_div{
+    .dashboard-wrapper-col-two > .user_profile_wrap > .dashboard_wrapper_col_two_h5_div, .dashboard-wrapper-col-two > .user_profile_wrap > h5{
         border-bottom: 2px solid var(--altWhite);
         padding-bottom: 2px;
     }
@@ -1221,7 +1221,6 @@ nav > div > ul > li > a.text-scroll:nth-child(1), nav > div > ul > li > a.text-s
         font-size: 32px;
         font-weight: bold;
         /* margin-top: -90%; */
-        /* margin-left: 10px;
     }
 
     /* Dashboard change password */
@@ -1253,7 +1252,6 @@ nav > div > ul > li > a.text-scroll:nth-child(1), nav > div > ul > li > a.text-s
         border: 2px solid var(--altWhite);
     }
     /* Dashboard change password */
-
     .helper-wrapper > a{
         width: 5%;
         text-decoration: none;
@@ -1279,19 +1277,19 @@ nav > div > ul > li > a.text-scroll:nth-child(1), nav > div > ul > li > a.text-s
         height: 25vh;
     }
 
-    .account-div-two{
+    .dashboard-wrapper-col-two > .user_profile_wrap > .account-div > .row > .account-div-two{
         margin-left: -20px;
     }
-    .account-div-two > ul > li{
+    .dashboard-wrapper-col-two > .user_profile_wrap > .account-div > .row > .account-div-two > ul > li{
         list-style: none;
         padding: 10px 0px;
-        font-size: 24px;
+        font-size: 16px;
         /* color: gray; */
     }
 
     .profile-logout{
         border-radius: 10px;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
         color: grey;
         padding: 5px;

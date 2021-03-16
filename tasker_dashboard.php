@@ -24,7 +24,7 @@
             <div class="col-md-2 dashboard-wrapper-col-one">
                 <ul id="active_userdashboard_ul">
                     <li class="userdashboard_li " id="li_radio_1">Profile</li>
-                    <li class="userdashboard_li" id="li_radio_2">Password</li>
+                    <li class="userdashboard_li" id="li_radio_2"><a href="#password?p=<?php echo 'password'?>">Password</a></li>
                     <li class="userdashboard_li" id="li_radio_3">Notifications</li>
                     <li class="userdashboard_li" id="li_radio_4">Billing Info</li>
                     <li class="userdashboard_li" id="li_radio_5">Cancel a Task</li>
@@ -58,7 +58,8 @@
                 </div>
 
                 <!-- Change Password -->
-                <div class="user_profile_wrap li_radio_2">
+                <?php if(isset($_GET['p'])) : ?>
+                <div class="user_profile_wrap li_radio_2" id="password">
                     <h5 class="mt-5">Change Password</h5>
                     <div class="account-div">
                         <form action="" method="post" class="form-group">
@@ -71,6 +72,7 @@
                         </form>
                     </div>
                 </div>
+                <?php endif;?>
 
                  <!--Notification  -->
                 <div class="user_profile_wrap li_radio_3">

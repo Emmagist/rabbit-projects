@@ -122,10 +122,10 @@
                             header("Location:user_dashboard.php?token=".$userInfo['csrf']);
                             $_SESSION['message-info'] = "Welcome " . ucwords($userInfo['last_name']) . " Kindly take Covid-19 measure to stay safe";
                         }elseif ($userInfo['role'] == 2) {
-                            header("Location:tasker_dashboard.php");
+                            header("Location:tasker_dashboard.php?token=".$userInfo['csrf']);
                             $_SESSION['message-info'] = "Welcome " . ucwords($userInfo['last_name']) . " Kindly take Covid-19 measure to stay safe";
                         }elseif ($userInfo['role'] == 1) {
-                            header("Location:admin_dashboard.php");
+                            header("Location:admin/index.php?token=".$userInfo['csrf']);
                             $_SESSION['message-info'] = "Welcome " . ucwords($userInfo['last_name']) . " Kindly take Covid-19 measure to stay safe";
                         }else {
                             header("Location:login.php");
